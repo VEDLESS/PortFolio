@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, featuring smooth animations and interactive components.
 
-![Portfolio Preview](./public/portfolio-preview.png)
+![Portfolio Preview]([./public/portfolio-preview.png](https://vedantanasune.netlify.app/))
 
 ## 🌟 Features
 
@@ -61,7 +61,7 @@ NEXT_PUBLIC_EMAILJS_USER_ID=your_user_id
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [PortFolio]([http://localhost:3000](https://vedantanasune.netlify.app/)) in your browser
 
 ## 🔧 Configuration
 
