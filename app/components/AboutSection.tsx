@@ -52,7 +52,7 @@ const AboutSection: React.FC<AboutProps> = ({ data }) => {
     {
       icon: <GraduationCapIcon className="w-6 h-6" />,
       title: "Academic Focus",
-      description: "Pursuing a Master's Degree in IT Architecture in the 42 network."
+      description: "Pursuing a Bachelor's Degree in Computer Engineering in V.J.T.I."
     }
   ];
 
@@ -93,7 +93,7 @@ const AboutSection: React.FC<AboutProps> = ({ data }) => {
                 </p>
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                   <p className="font-medium text-gray-700 dark:text-gray-200">
-                    Currently pursuing my passion for programming in the 42 network, working toward a Master's Degree in IT Architecture.
+                    Currently pursuing B.Tech at V.J.T.I. in Computer Engineering.
                   </p>
                 </div>
               </div>

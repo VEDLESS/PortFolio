@@ -65,15 +65,14 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
               }}
             >
               <div className="flex items-center">
-                <img src="./ucefLogo.png" alt="Logo" className="h-14 w-14" />
+                <img src="./vedulogo.png" alt="Logo" className="h-14 w-14" />
                 <span className="text-2xl font-bold gradient-text bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                  Youssef Sahih
+                  Vedant Anasune
                 </span>
               </div>
             </a>
             <p className="text-gray-600 dark:text-gray-400 mt-4 mb-6 max-w-md">
-              A passionate software developer with expertise in both low-level
-              programming and web development technologies.
+              A passionate software developer with expertise in web development technologies.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((link, index) => (
@@ -123,10 +122,10 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:ucefsahih@gmail.com"
+                  href="mailto:vedantanasuneaa@gmail.com"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
                 >
-                  ucefsahih@gmail.com
+                  vedantanasuneaa@gmail.com
                 </a>
               </li>
               <li>
@@ -134,22 +133,22 @@ const Footer: React.FC<FooterProps> = ({ socialLinks }) => {
                   href="tel:+212708978739"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors"
                 >
-                  +212 708 978 739
+                  +917822837867
                 </a>
               </li>
-              <li className="text-gray-600 dark:text-gray-400">Morocco</li>
+              <li className="text-gray-600 dark:text-gray-400">India</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Youssef Sahih. All rights
+            &copy; {new Date().getFullYear()} Vedant Anasune. All rights
             reserved.
           </p>
           <p className="text-gray-600 dark:text-gray-400 text-sm mt-2 md:mt-0">
             Designed & Built with <span className="text-red-500">♥</span> by
-            Youssef Sahih
+            Vedant Anasune
           </p>
         </div>
       </div>

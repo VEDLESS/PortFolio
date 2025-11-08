@@ -124,10 +124,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Contact
 
 For any questions or feedback, please reach out:
-- Email: ucefsahih@gmail.com
-- LinkedIn: [Youssef Sahih](https://www.linkedin.com/in/youssef-sahih/)
-- GitHub: [@ysahih](https://github.com/ysahih)
+- Email: vedantanasuneaa@gmail.com
+- LinkedIn: [Vedant Anasune](https://www.linkedin.com/in/vedantanasune?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- GitHub: [@VEDLESS](https://github.com/VEDLESS)
 
 ---
 
-Built with ❤️ by Youssef Sahih
+Built with ❤️ by Vedant Anasune

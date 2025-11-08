@@ -8,6 +8,7 @@ interface Project {
   title: string;
   description: string;
   techStack: string[];
+  image?: string;
   link?: {
     href: string;
     label?: string;
@@ -142,11 +143,17 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
             >
               <div className="relative overflow-hidden h-48">
                 <img 
-                  src={getProjectImage(project.title)} 
+                  src={project.image || getProjectImage(project.title)} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500"
                   style={{ 
                     transform: hoveredProject === project.title ? 'scale(1.1)' : 'scale(1)'
+                  }}
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (target.src !== '/projects/placeholder.svg') {
+                      target.src = '/projects/placeholder.svg';
+                    }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
@@ -216,9 +223,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
               >
                 <div className="relative h-64 md:h-80">
                   <img 
-                    src={getProjectImage(selectedProject.title)} 
+                    src={selectedProject.image || getProjectImage(selectedProject.title)} 
                     alt={selectedProject.title} 
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (target.src !== '/projects/placeholder.svg') {
+                        target.src = '/projects/placeholder.svg';
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                     <h3 className="text-white text-2xl md:text-3xl font-bold">{selectedProject.title}</h3>

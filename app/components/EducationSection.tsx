@@ -100,7 +100,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ education }) => {
                         <div className="flex items-start gap-2">
                           <BookOpenIcon className="w-5 h-5 text-primary dark:text-primary-light mt-1" />
                           <p className="text-sm text-gray-700 dark:text-gray-300">
-                            Part of the prestigious 42 Network, known for its project-based, peer-to-peer learning methodology.
+                          One of India's premier engineering institutes, renowned for its academic excellence, innovation-driven culture, and vibrant student community.
                           </p>
                         </div>
                       </div>

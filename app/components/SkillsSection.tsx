@@ -10,25 +10,69 @@ interface SkillsProps {
 
 // Skill proficiency data (this would normally come from a backend/database)
 const SKILL_PROFICIENCY: Record<string, number> = {
-  "C": 95,
-  "C++": 90,
+  // Languages
+  "C++": 85,
+  "Python": 80,
   "JavaScript": 85,
-  "TypeScript": 80,
-  "Html": 90,
-  "Tailwind Css": 85,
-  "React": 80,
-  "Node.js/Next.js": 75,
-  "Docker": 70,
-  "Git": 85,
-  "Jira": 80,
+  "HTML": 90,
+  "CSS": 88,
+  // Frontend
+  "React.js": 80,
+  "Tailwind CSS": 82,
+  "Bootstrap": 78,
+  "Responsive Web Design": 85,
+  "UI State Management": 80,
+  "Component-based Architecture": 83,
+  // Backend
+  "Node.js": 78,
+  "Express.js": 76,
+  "REST API Development": 80,
+  "Authentication basics (JWT / Session concepts)": 70,
+  "API Integration (Google Translate, News APIs)": 75,
+  // Databases
+  "MongoDB": 75,
+  "MySQL / MariaDB": 72,
+  // DevOps / Deployment
+  "Linux": 70,
+  "Basic CI/CD understanding": 65,
+  "Deploying small web projects": 70,
+  // Tools & Platforms
+  "Git & GitHub": 80,
+  "VS Code": 90,
+  "Linux Terminal": 72,
+  "Postman (API Testing)": 78,
+  "Chrome DevTools (Debugging & Performance)": 80,
+  "Figma (wireframes & UI planning)": 70,
 };
 
-// Categorized skills
-const SKILL_CATEGORIES = {
-  "Languages": ["C", "C++", "JavaScript", "TypeScript"],
-  "Frontend": ["Html", "Tailwind Css", "React", "Redux"],
-  "Backend": ["Node.js/Next.js", "Docker"],
-  "DevOps & Tools": ["Git", "Docker", "Jira"]
+// Categorized skills aligned with new skill list
+const SKILL_CATEGORIES: Record<string, string[]> = {
+  "Languages": ["C++", "Python", "JavaScript", "HTML", "CSS"],
+  "Frontend": [
+    "React.js",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Responsive Web Design",
+    "UI State Management",
+    "Component-based Architecture",
+  ],
+  "Backend": [
+    "Node.js",
+    "Express.js",
+    "REST API Development",
+    "Authentication basics (JWT / Session concepts)",
+    "API Integration (Google Translate, News APIs)",
+  ],
+  "Databases": ["MongoDB", "MySQL / MariaDB"],
+  "DevOps & Tools": [
+    "Linux",
+    "Git & GitHub",
+    "Basic CI/CD understanding",
+    "Deploying small web projects",
+    "Postman (API Testing)",
+    "Chrome DevTools (Debugging & Performance)",
+    "Figma (wireframes & UI planning)",
+  ],
 };
 
 const SkillsSection: React.FC<SkillsProps> = ({ skills }) => {
@@ -39,6 +83,7 @@ const SkillsSection: React.FC<SkillsProps> = ({ skills }) => {
     { id: "Languages", label: "Languages", icon: <Code2Icon className="w-5 h-5" /> },
     { id: "Frontend", label: "Frontend", icon: <LayoutDashboardIcon className="w-5 h-5" /> },
     { id: "Backend", label: "Backend", icon: <ServerIcon className="w-5 h-5" /> },
+    { id: "Databases", label: "Databases", icon: <ServerIcon className="w-5 h-5" /> },
     { id: "DevOps & Tools", label: "DevOps & Tools", icon: <PenToolIcon className="w-5 h-5" /> },
   ];
 
@@ -71,25 +116,30 @@ const SkillsSection: React.FC<SkillsProps> = ({ skills }) => {
 
   // Function to get devicon class
   const getDeviconClass = (skill: string): string => {
-    const skillLower = skill.toLowerCase().replace(/\./g, '').replace(/\s/g, '');
-    
-    // Map special cases
+    const normalized = skill.toLowerCase();
     const skillMap: Record<string, string> = {
-      "c": "c",
       "c++": "cplusplus",
-      "html": "html5",
-      "tailwind css": "tailwindcss",
+      "python": "python",
       "javascript": "javascript",
-      "typescript": "typescript",
+      "html": "html5",
+      "css": "css3",
+      "react.js": "react",
       "react": "react",
-      "redux": "redux",
-      "nodejs/nextjs": "nextjs",
-      "jira": "jira",
-      "docker": "docker",
-      "git": "git",
+      "tailwind css": "tailwindcss",
+      "bootstrap": "bootstrap",
+      "node.js": "nodejs",
+      "nodejs": "nodejs",
+      "express.js": "express",
+      "expressjs": "express",
+      "mongodb": "mongodb",
+      "mysql / mariadb": "mysql",
+      "git & github": "git",
+      "linux": "linux",
+      "postman (api testing)": "postman",
+      "chrome devtools (debugging & performance)": "chrome",
+      "figma (wireframes & ui planning)": "figma",
     };
-
-    return skillMap[skillLower] || skillLower;
+    return skillMap[normalized] || 'code';
   };
 
   return (
@@ -159,7 +209,11 @@ const SkillsSection: React.FC<SkillsProps> = ({ skills }) => {
               >
                 <div className="flex items-center mb-4">
                   <div className="text-3xl text-primary mr-3">
-                    <i className={`devicon-${deviconClass}-plain colored`}></i>
+                    {deviconClass !== 'code' ? (
+                      <i className={`devicon-${deviconClass}-plain colored`}></i>
+                    ) : (
+                      <Code2Icon className="w-8 h-8 text-primary" />
+                    )}
                   </div>
                   <h3 className="text-xl font-semibold">{skill}</h3>
                 </div>

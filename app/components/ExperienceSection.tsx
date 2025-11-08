@@ -7,6 +7,7 @@ interface Experience {
   company: string;
   position: string;
   logo?: string;
+  bannerImage?: string;
   location: string;
   startDate: string;
   endDate: string;
@@ -45,7 +46,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience }) => 
 
   // Function to generate a default logo if none provided
   const generateDefaultLogo = (companyName: string) => {
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName)}&background=0D8ABC&color=fff&size=128`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(companyName)}&background=0D8ABC&color=fff&size=256`;
   };
 
   return (
@@ -80,7 +81,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience }) => 
             {experience.map((exp, index) => (
               <motion.div 
                 key={index}
-                className={`relative flex items-center ${
+                className={`relative flex items-stretch ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
                 variants={itemVariants}
@@ -166,6 +167,38 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experience }) => 
                             </li>
                           ))}
                         </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Full-height visual panel */}
+                <div className={`hidden md:flex w-0 md:w-5/12 ${
+                  index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'
+                }`}>
+                  <motion.div
+                    className="relative w-full h-full min-h-[320px] rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20"
+                    whileHover={{ y: -5 }}
+                  >
+                    <img
+                      src={exp.bannerImage || exp.logo || generateDefaultLogo(exp.company)}
+                      alt={`${exp.company} banner`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/80 dark:border-gray-700 shadow-md">
+                        <img
+                          src={exp.logo || generateDefaultLogo(exp.company)}
+                          alt={`${exp.company} logo`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white drop-shadow">{exp.company}</p>
+                        <p className="text-xs text-gray-200">{exp.position}</p>
                       </div>
                     </div>
                   </motion.div>

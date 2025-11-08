@@ -137,15 +137,21 @@ const HeroSection: React.FC<HeroProps> = ({ data }) => {
               className="flex flex-wrap gap-4 justify-center md:justify-start"
               variants={itemVariants}
             >
-              <motion.a
-                href={`mailto:${data.contact.email}`}
+              <motion.button
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) {
+                    window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+                  }
+                }}
+                type="button"
                 className="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <MailIcon className="w-4 h-4" />
                 Contact Me
-              </motion.a>
+              </motion.button>
               
               <motion.a
                 href="/resume.pdf"
